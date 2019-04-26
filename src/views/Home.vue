@@ -4,7 +4,6 @@
       <h1>Join the Web Developers Club!</h1>
       <p>Sign up to access our special, secret page. Just create an account and answer a brief survey.</p>
       <p class="error" v-show="showError">Please check the information you have entered. Be sure to fill in all the fields</p>
-
       <form v-on:submit.prevent="validateForm()">
         <p>
           <label for="username">Username
@@ -33,7 +32,7 @@
     </div>
     <div class="success-message" v-show="!showForm">
       <h1>Thank you for signing up!</h1>
-      <p>Please take our new member survey. Click here</p>
+      <p>Please take our new member survey. <router-link to="/survey"> Click here</router-link></p>
     </div>
   </div>
 </template>
@@ -62,14 +61,6 @@ export default {
       } else {
         this.showError = true;
       }
-      // Validate the form by checking the following values:
-      // username must not be blank
-      // email must not be blank
-      // password and passwordVerify must be equal
-      //
-      // When the form is validated, show the .success-message content
-      // If the form is invalid, show the form error message
-
     }
   }
 }
