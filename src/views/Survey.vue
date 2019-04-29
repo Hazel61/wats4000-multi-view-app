@@ -4,23 +4,19 @@
       <p>Please complete the new member survey.</p>
       <form v-on:submit.prevent="validateForm()">
       <p class="error" v-show="showError">Please check the information you have entered. Be sure to fill in all the fields</p>
-
-        <p><label for="q1">Q1: How long have you been building websites?<br><input type="text" id="q1" v-model="q1"></label></p>
-
-        <p>Q2: What languages interest you the most?<br>
-          <label v-for="language in languageOptions" :key="language.text">
-            <input type="checkbox" v-model="q2" :value="language.value">
+      <p><label for="q1">Q1: How long have you been building websites?<br><input type="text" id="q1" v-model="q1"></label></p>
+      <p>Q2: What languages interest you the most?<br>
+        <label v-for="language in languageOptions" :key="language.text">
+          <input type="checkbox" v-model="q2" :value="language.value">
             {{language.text}}
-          </label>
-        </p>
-
-        <p>Q3: What other topics interest you?<br>
-
+        </label>
+      </p>
+      <p>Q3: What other topics interest you?<br>
           <label v-for="topic in topicOptions" :key="topic.text">
             <input type="checkbox" v-model="q3" :value="topic.value">
           {{topic.text}}
           </label>
-        </p>
+      </p>
         <p>
           <label for="q4">Q4: What kinds of websites would you like to build someday?<br>
             <textarea cols="70" rows="8" id="q4" placeholder="Type your response here." v-model="q4"></textarea>
@@ -123,13 +119,10 @@ export default {
 h1, h2 {
   font-weight: normal;
 }
-
 ul {
   list-style-type: none;
   padding: 0;
 }
-
-
 a {
   color: #42b983;
 }
